@@ -29,11 +29,21 @@
 
 }
 
-figcaption {
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
-
+figure img {
+    width: 100%;
 }
+
+figure:hover {
+    box-shadow: 1em 1em 2em rgba(0,0,0,0.4); 
+}
+
+figcaption {
+    display: block;
+    text-align: center;
+    padding: 1em;
+    
+    
+}
+
 
 } /*end large */
