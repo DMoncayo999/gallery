@@ -1,4 +1,3 @@
-window.onload = init;
 
 let imagesToLoad = document.querySelectorAll('img[data-src]');
 const loadImages = (image) => {
@@ -8,7 +7,7 @@ const loadImages = (image) => {
   };
 };
 
-function init() {
+function imageLazyLoad() {
 
 if('IntersectionObserver' in window) {
   //console.log('IntersectionObserver');
@@ -17,9 +16,7 @@ if('IntersectionObserver' in window) {
     threshold: 0.7
   }
   
-  const observer = new IntersectionObserver( 
-// callback function below
-(items, observer) => {
+  const observer = new IntersectionObserver( (items, observer) => {
     items.forEach( (item) => {
      // console.log("item.target", item)
       if(item.isIntersecting) {
@@ -29,8 +26,8 @@ if('IntersectionObserver' in window) {
     });
   } 
   // , options
-  
   );
+
   imagesToLoad = document.querySelectorAll('img[data-src]');
   imagesToLoad.forEach( (img) => {
     observer.observe(img);

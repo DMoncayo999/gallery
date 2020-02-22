@@ -1,7 +1,12 @@
 window.onload = init;
 
-//change message in banner
 function init() {
+    // Create a callback array at the begining of each page
+    callbacks.forEach( f => f() );
+}
+
+//change message in banner
+function banner() {
     messages = [
         "Saturday = Preston &#129374; Pancakes in the Park! 9 a.m. Saturday at the city park pavilion.",
         "Don't forget to go to Church this Sunday &#9962;"
@@ -12,31 +17,9 @@ function init() {
     message = (today==6)? messages[1]: message;
     document.getElementById("alertBanner").innerHTML = message;
 
-// update wind chill     
-    updateChill();
-
-}
-//toggle sandwiche menu
-function toggleMenu () {
-    
-    document.getElementById("primaryNav").classList.toggle("hide");
- 
- }
-//update day and time in webpage
- function updateCurrentDate() {
-    let options = {
-        weekday: "long"
-        ,day: "numeric"
-        ,month: "long"
-        ,year: "numeric"
-        ,hour: "numeric"
-        ,minute: "numeric"
-    };
-    // return new Date();
-    return new Date().toLocaleDateString("en-Us", options)
 }
 
-const updateChill = () => {
+const updateWindChill = () => {
     //calculate windchill 
 
     const tempNumber = parseFloat (document.getElementById("temp").textContent);
@@ -53,4 +36,24 @@ const updateChill = () => {
         document.getElementById("chill").textContent = "No wind chill";
 
     }
+}
+
+
+//toggle sandwiche menu
+function toggleMenu () {    
+    document.getElementById("primaryNav").classList.toggle("hide"); 
+ }
+ 
+//update day and time in webpage
+ function updateCurrentDate() {
+    let options = {
+        weekday: "long"
+        ,day: "numeric"
+        ,month: "long"
+        ,year: "numeric"
+        ,hour: "numeric"
+        ,minute: "numeric"
+    };
+    // return new Date();
+    return new Date().toLocaleDateString("en-Us", options)
 }

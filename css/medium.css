@@ -98,7 +98,9 @@
     grid-gap: 5px;
     grid-column-gap: 1px;
 }
-
+figure {
+    margin: 10px;
+}
 
 /*----------- FOOTER --------------*/
 

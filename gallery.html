@@ -25,6 +25,10 @@
 <!-- enhance-desktop -->
 <link href="css/large.css" rel="stylesheet">
 <script src="js/scripts.js" ></script>
+<script src="js/lazypic.js"></script>
+<script>
+    const callbacks = [ banner, imageLazyLoad ];
+</script>
 
      
 </head>
@@ -60,7 +64,7 @@
 <main>
 <div id="alertBanner"></div>
   
-<section>
+<section class="GalleryTitle">
     <h2>Weather Gallery</h2>
 <div class="photos">
     <figure>
@@ -102,8 +106,6 @@
         <figcaption>Thunder storm comming</figcaption>
     </figure>
 </div>
-   
-    <script src="js/lazypic.js"></script>
    
 </section>
 
